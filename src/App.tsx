@@ -1,9 +1,21 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import AirportPage from './pages/AirportPage'
+import AuthPage from './pages/AuthPage'
+import Navigation from './components/Navigation'
+import MainPage from './pages/MainPage'
 
-function App() {
+export default function App() {
   return (
-    <div><p>ooo</p></div>
+    <>
+      <Navigation/>
+      <div className="container mx-auto pt-4">
+        <Routes>
+          <Route path={'/'} element={<MainPage/>}/>
+          <Route path={'/auth'} element={<AuthPage/>}/>
+          <Route path={'/airport/:id'} element={<AirportPage/>}/>
+        </Routes>
+      </div>
+    </>
   )
 }
-
-export default App
